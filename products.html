@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Products | Secure Living Solutions</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container container">
+      <div class="logo-container">
+        <a href="index.html">
+        <img src="images/logo.png" alt="Secure Living Solutions Logo" class="logo" />
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html" class="active">Products</a></li>
+          <li><a href="form.html">Sign Up</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <a href="#"><img src="images/facebook.png" alt="Facebook" /></a>
+        <a href="#"><img src="images/instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="images/whatsapp.png" alt="WhatsApp" /></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="product-page container">
+    <aside class="product-filters">
+      <h3>Filter by Category</h3>
+      <ul>
+        <li><button data-filter="all" class="active">All</button></li>
+        <li><button data-filter="alarms">Smart Alarms</button></li>
+        <li><button data-filter="cameras">Surveillance</button></li>
+        <li><button data-filter="motion-sensors">Motion Sensors</button></li>
+        <li><button data-filter="doorbells">Video Door Bell</button></li>
+        <li><button data-filter="locks">Smart Door Lock</button></li>
+      </ul>
+    </aside>
+
+    <section class="product-list">
+
+      <!-- Product Cards -->
+      <div class="product-card" data-category="alarms">
+        <img src="images/smart-alarm.png" alt="Smart Alarm" />
+        <h3>Smart Alarm</h3>
+        <p>Real-time wireless alarms with mobile alerts and auto-triggering.</p>
+        <div class="product-buttons">
+          <button class="btn" onclick="addToCart('Smart Alarm')">Add to Cart</button>
+          <button class="btn-outline">Wishlist</button>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="cameras">
+        <img src="images/camera.png" alt="Surveillance Camera" />
+        <h3>Surveillance Camera</h3>
+        <p>HD indoor/outdoor cameras with night vision and cloud recording.</p>
+        <div class="product-buttons">
+          <button class="btn" onclick="addToCart('Surveillance Camera')">Add to Cart</button>
+          <button class="btn-outline">Wishlist</button>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="cameras">
+        <img src="images/monitor.png" alt="Monitor" />
+        <h3>Monitor</h3>
+        <p>High-resolution monitor to view multiple camera feeds simultaneously.</p>
+        <div class="product-buttons">
+          <button class="btn" onclick="addToCart('Monitor')">Add to Cart</button>
+          <button class="btn-outline">Wishlist</button>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="motion-sensors">
+        <img src="images/motion-sensor.png" alt="Motion Sensor" />
+        <h3>Motion Sensor</h3>
+        <p>Advanced motion sensors with smart detection and alert system.</p>
+        <div class="product-buttons">
+          <button class="btn" onclick="addToCart('Motion Sensor')">Add to Cart</button>
+          <button class="btn-outline">Wishlist</button>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="doorbells">
+        <img src="images/video-doorbell-icon.png" alt="Video Doorbell" />
+        <h3>Video Doorbell</h3>
+        <p>Two-way audio and live video lets you answer your door from anywhere.</p>
+        <div class="product-buttons">
+          <button class="btn">Add to Cart</button>
+          <button class="btn-outline">Wishlist</button>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="locks">
+        <img src="images/smart-lock-icon.png" alt="Smart Door Lock" />
+        <h3>Smart Door Lock</h3>
+        <p>Keyless entry with smartphone control, fingerprint access, and secure PIN codes.</p>
+        <div class="product-buttons">
+          <button class="btn">Add to Cart</button>
+          <button class="btn-outline">Wishlist</button>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Secure Living Solutions. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@securelivingsolutionstt.com">info@securelivingsolutionstt.com</a> |
+      Phone: <a href="tel:+18685551234">+1 868 555 1234</a>
+    </p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

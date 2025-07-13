@@ -1,0 +1,505 @@
+/* General resets */
+body {
+  margin: 0;
+  font-family: Arial, verdana;
+  color: #002244;
+  background-color: #f7f9fc;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background-color: #002244;
+  color: white;
+  position: relative;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  position: relative;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo-container {
+  flex: 0 0 auto;
+}
+
+.logo {
+  max-height: 120px;
+  width: auto;
+  display: block;
+}
+
+/* Navigation */
+nav {
+  flex: 1;
+  min-width: 200px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 25px;
+  align-items: center;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 6px;
+  display: block;
+  transition: color 0.3s ease;
+}
+nav ul li a:hover {
+  color: #0073e6;
+}
+
+nav ul li a.active {
+  color: white;
+}
+
+/* Dropdown submenu */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  background-color: #004477;
+  border-radius: 4px;
+  padding: 10px 0;
+  z-index: 1200;
+}
+
+.submenu li a {
+  padding: 8px 15px;
+  white-space: nowrap;
+  color: white;
+}
+
+.submenu li a:hover {
+  background-color: #005bb5;
+  color: white;
+}
+
+nav ul li:hover > .submenu {
+  display: block;
+}
+
+/* Social media icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.social-icons a img {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  filter: brightness(100%);
+  transition: filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+  filter: brightness(70%);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 300px;
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.hero-image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  z-index: 1;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px 40px;
+  border-radius: 12px;
+  max-width: 80%;
+  z-index: 10;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero-text button {
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  margin: 0 12px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Arial', Verdana;
+}
+
+.hero-text button:hover {
+  background-color: #005bb5;
+}
+
+/* Homepage Services Section */
+.homepage-sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section Cards */
+.section-card {
+  background-color: white;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  border-radius: 12px;
+  padding: 25px 20px;
+  flex: 1 1 280px;
+  max-width: 320px;
+  text-align: center;
+  transition: transform 0.25s ease;
+  margin-bottom: 30px;
+}
+
+.section-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgb(0 0 0 / 0.15);
+}
+
+.section-icon {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 15px;
+}
+
+.section-card h3 {
+  font-size: 1.3rem;
+  color: #002244;
+  margin-bottom: 15px;
+}
+
+.section-card p {
+  font-size: 1rem;
+  color: #004477;
+  margin-bottom: 15px;
+  min-height: 60px;
+}
+
+/* Buttons */
+.btn,
+.btn-outline {
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn {
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  min-width: 110px; /* equalize Add to Cart and Wishlist width */
+}
+
+.btn:hover {
+  background-color: #005bb5;
+}
+
+.btn-outline {
+  background-color: white;
+  color: #0073e6;
+  border: 1.5px solid #0073e6;
+  min-width: 110px; /* equalize Add to Cart and Wishlist width */
+}
+
+.btn-outline:hover {
+  background-color: #0073e6;
+  color: white;
+}
+
+/* Forms */
+form label {
+  font-weight: 600;
+  color: #002244;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  margin-bottom: 15px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #0073e6;
+  outline: none;
+}
+
+/* Product Page Layout */
+.product-page {
+  display: flex;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.product-filters {
+  flex: 0 0 220px;
+}
+
+.product-filters h3 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Optional: add filter icon before the title */
+.product-filters h3::before {
+  content: "🔍";
+  font-size: 1.3rem;
+}
+
+/* Filter list */
+.product-filters ul {
+  padding: 0;
+  list-style: none;
+}
+
+.product-filters ul li {
+  margin-bottom: 15px;
+}
+
+.product-filters ul li button {
+  width: 100%;
+  padding: 10px 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 1.5px solid #0073e6;
+  border-radius: 6px;
+  background-color: white;
+  color: #0073e6;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.product-filters ul li button:hover,
+.product-filters ul li button.active {
+  background-color: #0073e6;
+  color: white;
+}
+
+/* Product Grid */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  flex: 1;
+  gap: 30px;
+}
+
+/* Product Cards */
+.product-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+.product-card img {
+  width: 130px;
+  margin-bottom: 15px;
+}
+
+/* Specific fix: Monitor positioned under Surveillance Camera */
+.product-card[data-category="cameras"]:nth-of-type(3) {
+  order: 3; /* Keep Monitor after camera */
+}
+
+/* Product title and description */
+.product-card h3 {
+  font-size: 1.2rem;
+  color: #002244;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  font-size: 0.95rem;
+  color: #004477;
+  min-height: 60px;
+  margin-bottom: 15px;
+}
+
+.product-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 10px;
+  background-color: #002244;
+  color: white;
+  font-size: 0.9rem;
+  margin-top: 50px;
+}
+
+footer a {
+  color: white !important;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #0073e6 !important;
+  text-decoration: underline;
+}
+
+/* MOBILE STYLES — STACKED LAYOUT FOR SCREENS UNDER 768px */
+@media (max-width: 768px) {
+  /* Header layout stacking */
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 10px 0;
+  }
+
+  nav ul li {
+    margin: 0;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+  }
+
+  /* Hero section */
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .hero-text {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* optional for contrast */
+    color: #fff;
+  }
+
+  .hero-text h1 {
+    font-size: 1.5em;
+  }
+
+  .hero-text button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  /* Section cards stacked */
+  .homepage-sections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-card {
+    width: 90%;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .section-card img {
+    max-width: 80px;
+  }
+
+  /* Footer */
+  footer p {
+    font-size: 0.9em;
+    padding: 5px 10px;
+    text-align: center;
+  }
+}

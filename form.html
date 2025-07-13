@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Up / Login | Secure Living Solutions</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container container">
+      <div class="logo-container">
+        <a href="index.html">
+        <img src="images/logo.png" alt="Secure Living Solutions Logo" class="logo" />
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="form.html" class="active">Sign Up</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <a href="#"><img src="images/facebook.png" alt="Facebook" /></a>
+        <a href="#"><img src="images/instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="images/whatsapp.png" alt="WhatsApp" /></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Sign Up/Login Form -->
+  <main class="container" style="max-width: 400px; margin: 50px auto;">
+
+    <h1 style="text-align: center; color: #002244; margin-bottom: 30px;">Create Account or Login</h1>
+
+    <!-- Tabs for toggling -->
+    <div class="tab-buttons" style="display: flex; justify-content: center; gap: 20px; margin-bottom: 30px;">
+      <button id="showSignup" class="btn active">Sign Up</button>
+      <button id="showLogin" class="btn btn-outline">Login</button>
+    </div>
+
+    <!-- Signup Form -->
+    <form id="signupForm">
+      <label for="signupName">Full Name</label>
+      <input type="text" id="signupName" name="signupName" required placeholder="Your full name" />
+
+      <label for="signupEmail">Email</label>
+      <input type="email" id="signupEmail" name="signupEmail" required placeholder="you@example.com" />
+
+      <label for="signupPassword">Password</label>
+      <input type="password" id="signupPassword" name="signupPassword" required placeholder="Create password" />
+
+      <button type="submit" class="btn" style="width: 100%; margin-top: 15px;">Sign Up</button>
+    </form>
+
+    <!-- Login Form -->
+    <form id="loginForm" style="display: none;">
+      <label for="loginEmail">Email</label>
+      <input type="email" id="loginEmail" name="loginEmail" required placeholder="you@example.com" />
+
+      <label for="loginPassword">Password</label>
+      <input type="password" id="loginPassword" name="loginPassword" required placeholder="Your password" />
+
+      <button type="submit" class="btn" style="width: 100%; margin-top: 15px;">Login</button>
+    </form>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Secure Living Solutions. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@securelivingsolutionstt.com">info@securelivingsolutionstt.com</a> |
+      Phone: <a href="tel:+18685551234">+1 868 555 1234</a>
+    </p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Tabs for switching forms
+    const showSignupBtn = document.getElementById('showSignup');
+    const showLoginBtn = document.getElementById('showLogin');
+    const signupForm = document.getElementById('signupForm');
+    const loginForm = document.getElementById('loginForm');
+
+    showSignupBtn.addEventListener('click', () => {
+      signupForm.style.display = 'block';
+      loginForm.style.display = 'none';
+      showSignupBtn.classList.add('active');
+      showLoginBtn.classList.remove('active');
+    });
+
+    showLoginBtn.addEventListener('click', () => {
+      signupForm.style.display = 'none';
+      loginForm.style.display = 'block';
+      showLoginBtn.classList.add('active');
+      showSignupBtn.classList.remove('active');
+    });
+
+    // Email format checker
+    function validateEmail(email) {
+      const pattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+      return pattern.test(email);
+    }
+
+    // Sign Up Form Validation
+    if (signupForm) {
+      signupForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('signupName').value.trim();
+        const email = document.getElementById('signupEmail').value.trim();
+        const password = document.getElementById('signupPassword').value.trim();
+
+        if (!name) {
+          alert('Please enter your full name.');
+          document.getElementById('signupName').focus();
+          return;
+        }
+
+        if (!validateEmail(email)) {
+          alert('Please enter a valid email address.');
+          document.getElementById('signupEmail').focus();
+          return;
+        }
+
+        if (password.length < 6) {
+          alert('Password must be at least 6 characters.');
+          document.getElementById('signupPassword').focus();
+          return;
+        }
+
+        alert('Sign up successful! (Demo)');
+        this.reset();
+      });
+    }
+
+    // Login Form Validation
+    if (loginForm) {
+      loginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const email = document.getElementById('loginEmail').value.trim();
+        const password = document.getElementById('loginPassword').value.trim();
+
+        if (!validateEmail(email)) {
+          alert('Please enter a valid email address.');
+          document.getElementById('loginEmail').focus();
+          return;
+        }
+
+        if (!password) {
+          alert('Please enter your password.');
+          document.getElementById('loginPassword').focus();
+          return;
+        }
+
+        alert('Login successful! (Demo)');
+        this.reset();
+      });
+    }
+  </script>
+
+</body>
+</html>
